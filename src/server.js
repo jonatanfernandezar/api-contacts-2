@@ -16,7 +16,7 @@ const pool = mysql.createPool({
 });
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(cors({ origin: 'https://crud-contacts-person2.netlify.app' }));
 app.use(express.json());
 
 // Ruta para obtener usuarios
