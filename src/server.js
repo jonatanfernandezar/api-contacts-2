@@ -16,7 +16,12 @@ const pool = mysql.createPool({
 });
 
 // Middleware
-app.use(cors({ origin: 'https://crud-contacts-person2.netlify.app' }));
+app.use(cors({
+  origin: 'https://crud-contacts-person2.netlify.app', // Permite solicitudes desde este dominio
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados permitidos
+}));
+
 app.use(express.json());
 
 // Ruta para obtener usuarios
